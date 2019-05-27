@@ -52,9 +52,10 @@ def harris_corner_detector(img, w_size=3, k=0.05, threshold=0):
 	if(len(img.shape) == 3):
 		ret_img = np.copy(img)
 		dx, dy = image_derivatives(rgb_to_grayscale(img))
-	else:
+	elif(len(img.shape) == 2):
 		ret_img = to_rgb1a(img)
 		dx, dy = image_derivatives(img)
+	else: raise TypeError("Numpy array with invalid shape")
 	# dx, dy = np.gradient(rgb_to_grayscale(img))
 	ixx, ixy, iyy = dx**2, dx*dy, dy**2
 	
