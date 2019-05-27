@@ -27,6 +27,7 @@ plt.show()
 def rgb_to_grayscale(img):
 	return np.dot(img[..., :3], [0.2989, 0.5870, 0.1140])
 
+# ! Remove later, if not needed
 def to_rgb1a(im):
     # This should be fsater than 1, as we only
     # truncate to uint8 once (?)
