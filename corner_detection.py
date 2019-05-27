@@ -27,6 +27,14 @@ plt.show()
 def rgb_to_grayscale(img):
 	return np.dot(img[..., :3], [0.2989, 0.5870, 0.1140])
 
+def to_rgb1a(im):
+    # This should be fsater than 1, as we only
+    # truncate to uint8 once (?)
+    w, h = im.shape
+    ret = np.empty((w, h, 3), dtype=np.uint8)
+    ret[:, :, 2] =  ret[:, :, 1] =  ret[:, :, 0] =  im
+    return ret
+
 # * Calculates x and y derivatives using Sobel operator
 # ? Study possibility of replacement with np.gradient
 def image_derivatives(arr, x = True, y = True):
@@ -35,20 +43,38 @@ def image_derivatives(arr, x = True, y = True):
 	return [scipy.signal.convolve2d(arr, kernel_x, mode='same') if x else None, \
 		scipy.signal.convolve2d(arr, kernel_y, mode='same') if y else None]
 
-# ! Remove this function after done testing
-# * Calculates gradient of image array
-def image_gradient(arr):
-	deriv = image_derivatives(arr)
-	return np.power(np.power(deriv[0], 2) + np.power(deriv[1], 2), 1/2)
+# * Detects corners from img input, using the Harris Corner Detector
+def harris_corner_detector(img, w_size=3, k=0.05, threshold=0):
+	corner_points = []
+	offset = w_size // 2
 
-# * Calculates and returns tensor setup, from image derivatives
-# * Important to remember: i_x * i_y == i_y * i_x
-def tensor_setup(i_x, i_y):
-	return [i_x ** 2, i_x * i_y, i_y **2]
+	# Find derivatives and tensor setup
+	if(len(img.shape) == 3):
+		ret_img = np.copy(img)
+		dx, dy = image_derivatives(rgb_to_grayscale(img))
+	else:
+		ret_img = to_rgb1a(img)
+		dx, dy = image_derivatives(img)
+	# dx, dy = np.gradient(rgb_to_grayscale(img))
+	ixx, ixy, iyy = dx**2, dx*dy, dy**2
+	
+	# Iterate through windows
+	for i in range(offset, img.shape[0]-offset):
+		for j in range(offset, img.shape[1]-offset):
+			# Calculate sum over the sliding window
+			sxx = np.sum(ixx[i-offset:i+offset+1, j-offset:j+offset+1])
+			syy = np.sum(iyy[i-offset:i+offset+1, j-offset:j+offset+1])
+			sxy = np.sum(ixy[i-offset:i+offset+1, j-offset:j+offset+1])
 
-# TODO: Harris response calculation
-# TODO: Find edges and corners using R
+			# Find determinant and trace, use to get corner response -> r = det - k*(trace**2)
+			r = ((sxx * syy) - (sxy**2)) - k*((sxx + syy)**2)
 
+			# Verify if point is a corner with threshold value
+			# If true, add to list of corner points and colorize point on returning image
+			if (r > threshold):
+				corner_points.append([i, j, r])
+				ret_img[i, j] = [255, 0, 0]
+	return ret_img, corner_points
 #%%
 
 #%%
