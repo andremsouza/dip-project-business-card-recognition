@@ -50,3 +50,12 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+# VSCode config files
+.vscode/
+
+# Jupyter config files
+.ipynb_checkpoints/
+
+# PDF files
+*.pdf
