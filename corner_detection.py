@@ -6,7 +6,7 @@ import imageio
 import matplotlib.pyplot as plt
 import matplotlib as mpl
 import scipy
-import scipy.signal
+import skimage
 #%% [markdown]
 # ## Visualizing examples
 #%%
@@ -29,12 +29,12 @@ def rgb_to_grayscale(img):
 
 # ! Remove later, if not needed
 def to_rgb1a(im):
-    # This should be fsater than 1, as we only
-    # truncate to uint8 once (?)
-    w, h = im.shape
-    ret = np.empty((w, h, 3), dtype=np.uint8)
-    ret[:, :, 2] =  ret[:, :, 1] =  ret[:, :, 0] =  im
-    return ret
+	# This should be fsater than 1, as we only
+	# truncate to uint8 once (?)
+	w, h = im.shape
+	ret = np.empty((w, h, 3), dtype=np.uint8)
+	ret[:, :, 2] =  ret[:, :, 1] =  ret[:, :, 0] =  im
+	return ret
 
 # * Calculates x and y derivatives using Sobel operator
 # ? Study possibility of replacement with np.gradient
@@ -77,6 +77,19 @@ def harris_corner_detector(img, w_size=3, k=0.05, threshold=0):
 				corner_points.append([i, j, r])
 				ret_img[i, j] = [255, 0, 0]
 	return ret_img, corner_points
-#%%
 
+# * Median filter. For each pixel of img, returns the median value of a region of k pixels around it
+def median_denoise(img, k=3):
+	img_final = np.copy(img)
+	offset = k//2
+	for i in range(offset, img.shape[0]-offset):
+		for j in range(offset, img.shape[1]-offset):
+			img_final[i][j] = np.median(img[i-offset:i+offset+1, j-offset:j+offset+1])
+	return img_final
 #%%
+#%%
+# * Finds corners of a img, utilizing thresholding and Harris Corner Detector
+def find_corners(img):
+	# Preprocessing
+	# img = skimage.transform.resize
+	pass
