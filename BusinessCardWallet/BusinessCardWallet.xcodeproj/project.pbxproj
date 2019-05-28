@@ -1,0 +1,349 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		873BEB9C229DE4CC006BDA40 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873BEB9B229DE4CC006BDA40 /* AppDelegate.swift */; };
+		873BEB9E229DE4CC006BDA40 /* BusinessCardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873BEB9D229DE4CC006BDA40 /* BusinessCardsViewController.swift */; };
+		873BEBA1229DE4CC006BDA40 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873BEB9F229DE4CC006BDA40 /* Main.storyboard */; };
+		873BEBA3229DE4D9006BDA40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 873BEBA2229DE4D9006BDA40 /* Assets.xcassets */; };
+		873BEBA6229DE4D9006BDA40 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873BEBA4229DE4D9006BDA40 /* LaunchScreen.storyboard */; };
+		87DD8BC0229DF60F009A1DAB /* BusinessCardDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DD8BBF229DF60F009A1DAB /* BusinessCardDetailsViewController.swift */; };
+		87DD8BC2229DF620009A1DAB /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DD8BC1229DF620009A1DAB /* CameraViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		873BEB98229DE4CC006BDA40 /* BusinessCardWallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BusinessCardWallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		873BEB9B229DE4CC006BDA40 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		873BEB9D229DE4CC006BDA40 /* BusinessCardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessCardsViewController.swift; sourceTree = "<group>"; };
+		873BEBA0229DE4CC006BDA40 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		873BEBA2229DE4D9006BDA40 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		873BEBA5229DE4D9006BDA40 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		873BEBA7229DE4D9006BDA40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		87DD8BBF229DF60F009A1DAB /* BusinessCardDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessCardDetailsViewController.swift; sourceTree = "<group>"; };
+		87DD8BC1229DF620009A1DAB /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		873BEB95229DE4CC006BDA40 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		873BEB8F229DE4CC006BDA40 = {
+			isa = PBXGroup;
+			children = (
+				873BEB9A229DE4CC006BDA40 /* BusinessCardWallet */,
+				873BEB99229DE4CC006BDA40 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		873BEB99229DE4CC006BDA40 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				873BEB98229DE4CC006BDA40 /* BusinessCardWallet.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		873BEB9A229DE4CC006BDA40 /* BusinessCardWallet */ = {
+			isa = PBXGroup;
+			children = (
+				873BEB9B229DE4CC006BDA40 /* AppDelegate.swift */,
+				873BEB9D229DE4CC006BDA40 /* BusinessCardsViewController.swift */,
+				87DD8BBF229DF60F009A1DAB /* BusinessCardDetailsViewController.swift */,
+				87DD8BC1229DF620009A1DAB /* CameraViewController.swift */,
+				873BEB9F229DE4CC006BDA40 /* Main.storyboard */,
+				873BEBA2229DE4D9006BDA40 /* Assets.xcassets */,
+				873BEBA4229DE4D9006BDA40 /* LaunchScreen.storyboard */,
+				873BEBA7229DE4D9006BDA40 /* Info.plist */,
+			);
+			path = BusinessCardWallet;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		873BEB97229DE4CC006BDA40 /* BusinessCardWallet */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 873BEBAA229DE4D9006BDA40 /* Build configuration list for PBXNativeTarget "BusinessCardWallet" */;
+			buildPhases = (
+				873BEB94229DE4CC006BDA40 /* Sources */,
+				873BEB95229DE4CC006BDA40 /* Frameworks */,
+				873BEB96229DE4CC006BDA40 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BusinessCardWallet;
+			productName = BusinessCardWallet;
+			productReference = 873BEB98229DE4CC006BDA40 /* BusinessCardWallet.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		873BEB90229DE4CC006BDA40 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "Ringa - mac mini 2";
+				TargetAttributes = {
+					873BEB97229DE4CC006BDA40 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+				};
+			};
+			buildConfigurationList = 873BEB93229DE4CC006BDA40 /* Build configuration list for PBXProject "BusinessCardWallet" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 873BEB8F229DE4CC006BDA40;
+			productRefGroup = 873BEB99229DE4CC006BDA40 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				873BEB97229DE4CC006BDA40 /* BusinessCardWallet */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		873BEB96229DE4CC006BDA40 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				873BEBA6229DE4D9006BDA40 /* LaunchScreen.storyboard in Resources */,
+				873BEBA3229DE4D9006BDA40 /* Assets.xcassets in Resources */,
+				873BEBA1229DE4CC006BDA40 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		873BEB94229DE4CC006BDA40 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				873BEB9E229DE4CC006BDA40 /* BusinessCardsViewController.swift in Sources */,
+				87DD8BC2229DF620009A1DAB /* CameraViewController.swift in Sources */,
+				87DD8BC0229DF60F009A1DAB /* BusinessCardDetailsViewController.swift in Sources */,
+				873BEB9C229DE4CC006BDA40 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		873BEB9F229DE4CC006BDA40 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				873BEBA0229DE4CC006BDA40 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		873BEBA4229DE4D9006BDA40 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				873BEBA5229DE4D9006BDA40 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		873BEBA8229DE4D9006BDA40 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		873BEBA9229DE4D9006BDA40 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		873BEBAB229DE4D9006BDA40 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NJJ4RT7J94;
+				INFOPLIST_FILE = BusinessCardWallet/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Josue.BusinessCardWallet;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		873BEBAC229DE4D9006BDA40 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NJJ4RT7J94;
+				INFOPLIST_FILE = BusinessCardWallet/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Josue.BusinessCardWallet;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		873BEB93229DE4CC006BDA40 /* Build configuration list for PBXProject "BusinessCardWallet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				873BEBA8229DE4D9006BDA40 /* Debug */,
+				873BEBA9229DE4D9006BDA40 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		873BEBAA229DE4D9006BDA40 /* Build configuration list for PBXNativeTarget "BusinessCardWallet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				873BEBAB229DE4D9006BDA40 /* Debug */,
+				873BEBAC229DE4D9006BDA40 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 873BEB90229DE4CC006BDA40 /* Project object */;
+}
