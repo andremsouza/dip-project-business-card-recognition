@@ -105,12 +105,6 @@ def median_denoise(img, k=3):
 			img_final[i][j] = np.median(img[i-offset:i+offset+1, j-offset:j+offset+1])
 	return img_final
 #%%
-# Testing functions
-img3_blur = skimage.filters.gaussian(img3, multichannel=True)
-plt.figure(figsize=(16,16))
-img3_stcd, img3_corners = shi_tomasi_corner_detector(img3_blur, offset=1, threshold=1)
-plt.imshow(img3_stcd)
-#%%
 # Analyzing thresholding function for example images
 # Listing example files
 import os
