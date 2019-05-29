@@ -9,7 +9,7 @@ This project aims to build a digital business card wallet, as a mobile applicati
 
 ## Data Sources
 
-For this project, we will build a collection of images for testing purposes. Initially, these will be collected from various sources on the web.
+For this project, we will build a collection of images for testing purposes. Initially, the collected images are photos, taken from cellphones, of business cards of companies in São Paulo. Those will be used to test each step of the project.
 
 ## Expected development stages
 
