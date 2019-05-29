@@ -13,13 +13,13 @@ For this project, we will build a collection of images for testing purposes. Ini
 
 ## Expected development stages
 
-[ ] - Corner detection
+[x] - Corner detection - Detect/approximate corners of the business card of the input image. The user should be able to make adjustments when the detection is not accurate.
 
-[ ] - Text line detection
+[ ] - Perspective transform - Some images may be taken from different perspectives. This stage's objetive is to normalize the perspective, using on the corner points of the corner detection step, to enhance further operations.
 
-[ ] - Character recognition
+[ ] - Text and character recognition - Recognize the characters present in the text of the business card, and build strings with the sequences of recognized characters.
 
-[ ] - Text categorization for the english language
+[ ] - Text categorization for the portuguese language - For each sentence, use NLP methods to categorize it into the following categories: entity, phone number, email, location
 
 ### Extra development stages
 
@@ -27,7 +27,7 @@ For this project, we will build a collection of images for testing purposes. Ini
 
 [ ] - Web scraping for more info about the extracted entities
 
-[ ] - Text categorization for the portuguese language
+[ ] - Text categorization for the english language
 
 ## Examples of input images and outputs
 
@@ -87,3 +87,9 @@ For this project, we will build a collection of images for testing purposes. Ini
 ## Final notes
 
 As the examples of inputs and outputs have shown, the final application must be able to identify the text and categorize it based on the sentences found. The user must be able to edit the recognized strings and categories, when the results are not accurate.
+
+## Partial Report
+
+Until the date of this commit (29/05/2019), we have built the image collection for test purposes, and implemented methods for corner detection, utilizing the Harris Corner Detector and Shi-Tomasi Corner Detector.
+
+For the corner detection, we created functions for conversion from RGB to grayscale, computing image derivatives using the Sobel coefficient, and the corner detection function. We've utilized OpenCV's functions for denoising, and Scikit-image's functions for filtering and thresholding.
