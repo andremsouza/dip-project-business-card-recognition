@@ -27,14 +27,6 @@ plt.show()
 def rgb_to_grayscale(img):
 	return np.dot(img[..., :3], [0.2989, 0.5870, 0.1140])
 
-# ! Remove later, if not needed
-# * Converts an grayscale image to RGB, only in shape.
-def to_rgb1a(im):
-	w, h = im.shape
-	ret = np.empty((w, h, 3), dtype=np.uint8)
-	ret[:, :, 2] =  ret[:, :, 1] =  ret[:, :, 0] =  im
-	return ret
-
 # * Calculates x and y derivatives using Sobel operator
 # ? Study possibility of replacement with np.gradient
 def image_derivatives(arr, x = True, y = True):
