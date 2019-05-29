@@ -28,9 +28,8 @@ def rgb_to_grayscale(img):
 	return np.dot(img[..., :3], [0.2989, 0.5870, 0.1140])
 
 # ! Remove later, if not needed
+# * Converts an grayscale image to RGB, only in shape.
 def to_rgb1a(im):
-	# This should be fsater than 1, as we only
-	# truncate to uint8 once (?)
 	w, h = im.shape
 	ret = np.empty((w, h, 3), dtype=np.uint8)
 	ret[:, :, 2] =  ret[:, :, 1] =  ret[:, :, 0] =  im
@@ -45,16 +44,14 @@ def image_derivatives(arr, x = True, y = True):
 		scipy.signal.convolve2d(arr, kernel_y, mode='same') if y else None]
 
 # * Detects corners from img input, using the Harris Corner Detector
-def harris_corner_detector(img, w_size=3, k=0.05, threshold=0):
+def harris_corner_detector(img, offset=1, k=0.095, threshold=0, k_mean=False, eps = 0.001):
 	corner_points = []
-	offset = w_size // 2
+	ret_img = np.copy(img)
 
 	# Find derivatives and tensor setup
 	if(len(img.shape) == 3):
-		ret_img = np.copy(img)
 		dx, dy = image_derivatives(rgb_to_grayscale(img))
 	elif(len(img.shape) == 2):
-		ret_img = to_rgb1a(img)
 		dx, dy = image_derivatives(img)
 	else: raise TypeError("Numpy array with invalid shape")
 	# dx, dy = np.gradient(rgb_to_grayscale(img))
@@ -69,13 +66,55 @@ def harris_corner_detector(img, w_size=3, k=0.05, threshold=0):
 			sxy = np.sum(ixy[i-offset:i+offset+1, j-offset:j+offset+1])
 
 			# Find determinant and trace, use to get corner response -> r = det - k*(trace**2)
+			if(k_mean):
+				k = 2*(((sxx * syy) - (sxy**2))/(sxx + syy + eps))
 			r = ((sxx * syy) - (sxy**2)) - k*((sxx + syy)**2)
 
 			# Verify if point is a corner with threshold value
 			# If true, add to list of corner points and colorize point on returning image
 			if (r > threshold):
 				corner_points.append([i, j, r])
-				ret_img[i, j] = [255, 0, 0]
+				if(len(ret_img.shape) == 3):
+					ret_img[i, j] = [255, 0, 0]
+				elif(len(ret_img.shape) == 2):
+					ret_img[i, j] = 255
+				else: raise TypeError("Numpy array with invalid shape")
+	return ret_img, corner_points
+
+# * Detects corner from img input, using the Shi-Tomasi Corner Detector
+def shi_tomasi_corner_detector(img, offset=1, threshold=0):
+	corner_points = []
+	ret_img = np.copy(img)
+
+	# Find derivatives and tensor setup
+	if(len(img.shape) == 3):
+		dx, dy = image_derivatives(rgb_to_grayscale(img))
+	elif(len(img.shape) == 2):
+		dx, dy = image_derivatives(img)
+	else: raise TypeError("Numpy array with invalid shape")
+	# dx, dy = np.gradient(rgb_to_grayscale(img))
+	ixx, ixy, iyy = dx**2, dx*dy, dy**2
+	
+	# Iterate through windows
+	for i in range(offset, img.shape[0]-offset):
+		for j in range(offset, img.shape[1]-offset):
+			# Calculate sum over the sliding window
+			sxx = np.sum(ixx[i-offset:i+offset+1, j-offset:j+offset+1])
+			syy = np.sum(iyy[i-offset:i+offset+1, j-offset:j+offset+1])
+			sxy = np.sum(ixy[i-offset:i+offset+1, j-offset:j+offset+1])
+
+			# Find determinant and trace, use to get corner response -> r = min(lambda1, lambda2)
+			r = np.minimum(sxx, syy)
+
+			# Verify if point is a corner with threshold value
+			# If true, add to list of corner points and colorize point on returning image
+			if (r > threshold):
+				corner_points.append([i, j, r])
+				if(len(ret_img.shape) == 3):
+					ret_img[i, j] = [255, 0, 0]
+				elif(len(ret_img.shape) == 2):
+					ret_img[i, j] = 255
+				else: raise TypeError("Numpy array with invalid shape")
 	return ret_img, corner_points
 
 # * Median filter. For each pixel of img, returns the median value of a region of k pixels around it
@@ -87,9 +126,16 @@ def median_denoise(img, k=3):
 			img_final[i][j] = np.median(img[i-offset:i+offset+1, j-offset:j+offset+1])
 	return img_final
 #%%
+# Testing functions
+img3_blur = skimage.filters.gaussian(img3, multichannel=True)
+plt.figure(figsize=(26,26))
+img3_stcd, img3_corners = shi_tomasi_corner_detector(img3_blur, offset=1, threshold=1)
+plt.imshow(img3_stcd)
 #%%
 # * Finds corners of a img, utilizing thresholding and Harris Corner Detector
+# * Also will add suport to Shi-Tomasi Corner Detector
 def find_corners(img):
 	# Preprocessing
 	# img = skimage.transform.resize
 	pass
+#%%
