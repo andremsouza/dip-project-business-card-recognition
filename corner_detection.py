@@ -128,9 +128,35 @@ def median_denoise(img, k=3):
 #%%
 # Testing functions
 img3_blur = skimage.filters.gaussian(img3, multichannel=True)
-plt.figure(figsize=(26,26))
+plt.figure(figsize=(16,16))
 img3_stcd, img3_corners = shi_tomasi_corner_detector(img3_blur, offset=1, threshold=1)
 plt.imshow(img3_stcd)
+#%%
+# Analyzing thresholding function for example images
+# Listing example files
+import os
+example_files = ['./images/' + f for f in os.listdir('./images') if os.path.isfile(os.path.join('./images', f))]
+
+# Running tests on an random image
+img = imageio.imread(example_files[np.random.randint(0, len(example_files))])
+#%%
+# Testing threshold functions on image
+skimage.filters.try_all_threshold(rgb_to_grayscale(img), figsize=(10, 10))
+#%%
+# Applying gaussian filter to remove noise
+img_blur = skimage.filters.gaussian(img, sigma=1, multichannel=True)
+plt.figure(figsize=(16, 16))
+plt.imshow(img_blur)
+#%%
+# Executing HCD
+img_hcd, img_hcd_c = harris_corner_detector(img_blur, offset=1, k=0.15)
+plt.figure(figsize=(16, 16))
+plt.imshow(img_hcd)
+#%%
+# Executing STCD
+img_shcd, img_shcd_c = shi_tomasi_corner_detector(img_blur, offset=1, threshold=100)
+plt.figure(figsize=(16, 16))
+plt.imshow(img_hcd)
 #%%
 # * Finds corners of a img, utilizing thresholding and Harris Corner Detector
 # * Also will add suport to Shi-Tomasi Corner Detector
