@@ -1,0 +1,16 @@
+PODS:
+  - CropViewController (2.4.0)
+
+DEPENDENCIES:
+  - CropViewController
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - CropViewController
+
+SPEC CHECKSUMS:
+  CropViewController: a090820b15fc3da68e694d7c192a4708c576828b
+
+PODFILE CHECKSUM: 39e89840d6d057b6c1699fb463ef084bf32e7549
+
+COCOAPODS: 1.7.0.beta.3

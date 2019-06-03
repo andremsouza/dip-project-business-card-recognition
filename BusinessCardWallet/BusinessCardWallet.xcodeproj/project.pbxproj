@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		872655CE22A597FE0078ED4A /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872655CD22A597FE0078ED4A /* CustomView.swift */; };
 		873BEB9C229DE4CC006BDA40 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873BEB9B229DE4CC006BDA40 /* AppDelegate.swift */; };
 		873BEB9E229DE4CC006BDA40 /* BusinessCardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873BEB9D229DE4CC006BDA40 /* BusinessCardsViewController.swift */; };
 		873BEBA1229DE4CC006BDA40 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873BEB9F229DE4CC006BDA40 /* Main.storyboard */; };
@@ -14,9 +15,12 @@
 		873BEBA6229DE4D9006BDA40 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873BEBA4229DE4D9006BDA40 /* LaunchScreen.storyboard */; };
 		87DD8BC0229DF60F009A1DAB /* BusinessCardDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DD8BBF229DF60F009A1DAB /* BusinessCardDetailsViewController.swift */; };
 		87DD8BC2229DF620009A1DAB /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DD8BC1229DF620009A1DAB /* CameraViewController.swift */; };
+		D9D1761F848EBEC61EC02E4A /* Pods_BusinessCardWallet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B205A13AB74853B188ABDEC /* Pods_BusinessCardWallet.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5B972AB131EAA7547D49C2A4 /* Pods-BusinessCardWallet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusinessCardWallet.release.xcconfig"; path = "Target Support Files/Pods-BusinessCardWallet/Pods-BusinessCardWallet.release.xcconfig"; sourceTree = "<group>"; };
+		872655CD22A597FE0078ED4A /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		873BEB98229DE4CC006BDA40 /* BusinessCardWallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BusinessCardWallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		873BEB9B229DE4CC006BDA40 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		873BEB9D229DE4CC006BDA40 /* BusinessCardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessCardsViewController.swift; sourceTree = "<group>"; };
@@ -26,6 +30,8 @@
 		873BEBA7229DE4D9006BDA40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		87DD8BBF229DF60F009A1DAB /* BusinessCardDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessCardDetailsViewController.swift; sourceTree = "<group>"; };
 		87DD8BC1229DF620009A1DAB /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		9B205A13AB74853B188ABDEC /* Pods_BusinessCardWallet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BusinessCardWallet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5AACD11C9A1013F73FCA5DA /* Pods-BusinessCardWallet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusinessCardWallet.debug.xcconfig"; path = "Target Support Files/Pods-BusinessCardWallet/Pods-BusinessCardWallet.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +39,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9D1761F848EBEC61EC02E4A /* Pods_BusinessCardWallet.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		74952EB513B4CAAB7855926B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F5AACD11C9A1013F73FCA5DA /* Pods-BusinessCardWallet.debug.xcconfig */,
+				5B972AB131EAA7547D49C2A4 /* Pods-BusinessCardWallet.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		873BEB8F229DE4CC006BDA40 = {
 			isa = PBXGroup;
 			children = (
 				873BEB9A229DE4CC006BDA40 /* BusinessCardWallet */,
 				873BEB99229DE4CC006BDA40 /* Products */,
+				74952EB513B4CAAB7855926B /* Pods */,
+				8C142B82C74E51182772A2DA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -59,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				873BEB9B229DE4CC006BDA40 /* AppDelegate.swift */,
+				872655CD22A597FE0078ED4A /* CustomView.swift */,
 				873BEB9D229DE4CC006BDA40 /* BusinessCardsViewController.swift */,
 				87DD8BBF229DF60F009A1DAB /* BusinessCardDetailsViewController.swift */,
 				87DD8BC1229DF620009A1DAB /* CameraViewController.swift */,
@@ -70,6 +90,14 @@
 			path = BusinessCardWallet;
 			sourceTree = "<group>";
 		};
+		8C142B82C74E51182772A2DA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9B205A13AB74853B188ABDEC /* Pods_BusinessCardWallet.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -77,9 +105,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 873BEBAA229DE4D9006BDA40 /* Build configuration list for PBXNativeTarget "BusinessCardWallet" */;
 			buildPhases = (
+				17A679170BB3A7586E69714F /* [CP] Check Pods Manifest.lock */,
 				873BEB94229DE4CC006BDA40 /* Sources */,
 				873BEB95229DE4CC006BDA40 /* Frameworks */,
 				873BEB96229DE4CC006BDA40 /* Resources */,
+				3EB09E4D802A3C7B77EE365A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -136,11 +166,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		17A679170BB3A7586E69714F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BusinessCardWallet-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3EB09E4D802A3C7B77EE365A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BusinessCardWallet/Pods-BusinessCardWallet-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BusinessCardWallet/Pods-BusinessCardWallet-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BusinessCardWallet/Pods-BusinessCardWallet-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		873BEB94229DE4CC006BDA40 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				872655CE22A597FE0078ED4A /* CustomView.swift in Sources */,
 				873BEB9E229DE4CC006BDA40 /* BusinessCardsViewController.swift in Sources */,
 				87DD8BC2229DF620009A1DAB /* CameraViewController.swift in Sources */,
 				87DD8BC0229DF60F009A1DAB /* BusinessCardDetailsViewController.swift in Sources */,
@@ -288,6 +361,7 @@
 		};
 		873BEBAB229DE4D9006BDA40 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F5AACD11C9A1013F73FCA5DA /* Pods-BusinessCardWallet.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -306,6 +380,7 @@
 		};
 		873BEBAC229DE4D9006BDA40 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5B972AB131EAA7547D49C2A4 /* Pods-BusinessCardWallet.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
