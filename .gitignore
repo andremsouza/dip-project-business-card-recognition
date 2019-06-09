@@ -56,6 +56,3 @@ dkms.conf
 
 # Jupyter config files
 .ipynb_checkpoints/
-
-# PDF files
-*.pdf
