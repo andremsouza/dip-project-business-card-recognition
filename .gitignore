@@ -56,3 +56,6 @@ dkms.conf
 
 # Jupyter config files
 .ipynb_checkpoints/
+
+# mypy cache files
+.mypy_cache/
