@@ -127,8 +127,8 @@ class CornerDetector:
         ixx, ixy, iyy = dx**2, dx * dy, dy**2
 
         # Iterate through windows
-        for i in range(offset, img.shape[0] - offset):
-            for j in range(offset, img.shape[1] - offset):
+        for i in range(offset, self.__img.shape[0] - offset):
+            for j in range(offset, self.__img.shape[1] - offset):
                 # Calculate sum over the sliding window
                 sxx = np.sum(ixx[i - offset:i + offset + 1, j - offset:j +
                                  offset + 1])
