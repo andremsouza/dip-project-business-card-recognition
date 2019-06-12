@@ -27,11 +27,16 @@ if __name__ == "__main__":
     #      [corner_points[:, 0].min(), corner_points[:, 1].max()],
     #      [corner_points[:, 0].max(), corner_points[:, 1].min()],
     #      [corner_points[:, 0].max(), corner_points[:, 1].max()]])
-    # new_corners = np.array([
-    #     [0, 0],
-    #     [0, corner_points[:, 1].max() - corner_points[:, 1].min() - 1],
-    # ])
-    
+    new_corners = np.array([
+        [0, 0],
+        [0, corner_points[:, 1].max() - corner_points[:, 1].min() - 1],
+        [corner_points[:, 0].max() - corner_points[:, 0].min() - 1, 0],
+        [
+            corner_points[:, 0].max() - corner_points[:, 0].min() - 1,
+            corner_points[:, 1].max() - corner_points[:, 1].min() - 1
+        ],
+    ])
+
     matrix = cv2.getPerspectiveTransform(corner_points, new_corners)
     result = cv2.warpPerspective(
         img, matrix, (corner_points[:, 0].max() - corner_points[:, 0].min(),
