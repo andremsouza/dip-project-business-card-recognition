@@ -111,7 +111,7 @@ class CornerDetector:
                     and E is the corner response measure of the point.
         """
         corner_points = []
-        ret_img = np.copy(img)
+        ret_img = np.copy(self.__img)
 
         # Preprocessing image with thresholding
         img_p = self.__preprocess()
