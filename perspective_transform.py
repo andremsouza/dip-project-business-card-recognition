@@ -6,11 +6,97 @@ from corner_detection import CornerDetector
 # %%
 
 
-def four_point_transform(img, src, dst):
-    """ Transform img, using four points in src, to four points in dst
+def calc_dst(pts):
+    """
     # TODO: Docstring
     """
-    pass
+    # Calculating shape and points of the resulting image
+    rect = pts.astype(np.float32)
+    (tl, tr, bl, br) = rect
+
+    # compute the width of the new image
+    widthA = np.sqrt(((br[0] - bl[0])**2) + ((br[1] - bl[1])**2))
+    widthB = np.sqrt(((tr[0] - tl[0])**2) + ((tr[1] - tl[1])**2))
+    maxWidth = max(int(widthA), int(widthB))
+
+    # compute the height of the new image
+    heightA = np.sqrt(((tr[0] - br[0])**2) + ((tr[1] - br[1])**2))
+    heightB = np.sqrt(((tl[0] - bl[0])**2) + ((tl[1] - bl[1])**2))
+    maxHeight = max(int(heightA), int(heightB))
+
+    # Calculate destination points of the transform
+    dst = np.array([[0, 0], [0, maxWidth - 1], [maxHeight - 1, 0],
+                    [maxHeight - 1, maxWidth - 1]],
+                   dtype=np.float32)
+    new_shape = (maxHeight, maxWidth)
+
+    return dst, new_shape
+
+
+def projective_mapping(pts):
+    """ Compute project mapping of the four points in pts
+    # TODO: Docstring
+    """
+    # Solve system of linear equations
+    a = np.array([[pts[0, 1], pts[1, 1], pts[2, 1]],
+                  [pts[0, 0], pts[1, 0], pts[2, 0]], [1, 1, 1]],
+                 dtype=np.double)
+    b = np.array([[pts[3, 1]], [pts[3, 0]], [1]], dtype=np.double)
+    x = np.linalg.solve(a, b)
+
+    return a * x.T
+
+
+def four_point_transform_matrix(src, dst):
+    """ Compute perspective transform matrix.
+    # TODO: Docstring
+    """
+    # Solve system of linear equations
+    A = projective_mapping(src)
+    B = projective_mapping(dst)
+
+    # Inverting matrix A
+    A_inv = np.linalg.inv(A)
+
+    # Computing the combined matrix and returning
+    return B @ A_inv
+
+
+def four_point_transform_warp(img, matrix, new_shape):
+    """
+    # TODO: Docstring
+    """
+    ret_img = np.zeros((new_shape[0], new_shape[1], img.shape[2]),
+                       dtype=np.uint8)
+    for x in range(img.shape[0]):
+        for y in range(img.shape[1]):
+            new_pos = matrix @ np.array([[x], [y], [1.0]])
+            new_pos = (new_pos / new_pos[2])[:2].astype(int)
+
+            # if new_pos is in the new image, copy from the source image
+            if (new_pos[1] > 0 and new_pos[1] < new_shape[0] and new_pos[0] > 0
+                    and new_pos[0] < new_shape[1]):
+                ret_img[new_pos[1], new_pos[0]] = img[x, y]
+    return ret_img
+
+
+def four_point_transform(img, pts):
+    """ Transform img, using four points in pts.
+    The area of the source img between the points will be transformed to
+    a new rectangular image.
+
+    Note:
+        It is assumed that the points in pts are in the following order:
+        [top-left, top-right, bottom-left, bottom-right]
+    # TODO: Docstring
+    """
+    # Calculating shape and points of the resulting image
+    dst, new_shape = calc_dst(pts)
+
+    # Calculating transform matrix
+    matrix = four_point_transform_matrix(pts, dst)
+
+    return four_point_transform_warp(img, matrix, new_shape)
 
 
 def four_point_transform_cv2(image, pts):
@@ -22,20 +108,20 @@ def four_point_transform_cv2(image, pts):
     # TODO: Docstring
     """
     rect = pts.astype(np.float32)
-    (tl, tr, bl, br) = pts
+    (tl, tr, bl, br) = rect
 
     # compute the width of the new image, which will be the
     # maximum distance between bottom-right and bottom-left
     # x-coordiates or the top-right and top-left x-coordinates
-    widthA = np.sqrt(((br[0] - bl[0]) ** 2) + ((br[1] - bl[1]) ** 2))
-    widthB = np.sqrt(((tr[0] - tl[0]) ** 2) + ((tr[1] - tl[1]) ** 2))
+    widthA = np.sqrt(((br[0] - bl[0])**2) + ((br[1] - bl[1])**2))
+    widthB = np.sqrt(((tr[0] - tl[0])**2) + ((tr[1] - tl[1])**2))
     maxWidth = max(int(widthA), int(widthB))
 
     # compute the height of the new image, which will be the
     # maximum distance between the top-right and bottom-right
     # y-coordinates or the top-left and bottom-left y-coordinates
-    heightA = np.sqrt(((tr[0] - br[0]) ** 2) + ((tr[1] - br[1]) ** 2))
-    heightB = np.sqrt(((tl[0] - bl[0]) ** 2) + ((tl[1] - bl[1]) ** 2))
+    heightA = np.sqrt(((tr[0] - br[0])**2) + ((tr[1] - br[1])**2))
+    heightB = np.sqrt(((tl[0] - bl[0])**2) + ((tl[1] - bl[1])**2))
     maxHeight = max(int(heightA), int(heightB))
 
     # now that we have the dimensions of the new image, construct
@@ -48,7 +134,8 @@ def four_point_transform_cv2(image, pts):
         [maxWidth - 1, 0],
         [0, maxHeight - 1],
         [maxWidth - 1, maxHeight - 1],
-    ], dtype=np.float32)
+    ],
+                   dtype=np.float32)
 
     # compute the perspective transform matrix and then apply it
     M = cv2.getPerspectiveTransform(rect, dst)
@@ -72,7 +159,7 @@ if __name__ == "__main__":
     ]
     # Selecting random file for testing
     file_img = example_files[np.random.randint(0, len(example_files))]
-    # file_img = './images/806123698_321554.jpg'  # Good file for testing
+    file_img = './images/806123698_321554.jpg'  # Good file for testing
     img = imageio.imread(file_img)
 
     # Finding corners from input image
@@ -83,5 +170,10 @@ if __name__ == "__main__":
     plt.figure(figsize=(10, 10))
     plt.imshow(cv2.cvtColor(result, cv2.COLOR_BGR2RGB))
     plt.show()
-    # cv2.imwrite("./out.png", result)
     # TODO: Test my implementation
+    img_p = four_point_transform(img, corner_points)
+    img_p = cv2.medianBlur(img_p, 3)
+    img_p = cv2.fastNlMeansDenoisingColored(img_p)
+    plt.figure(figsize=(10, 10))
+    plt.imshow(img_p)
+    plt.show()
