@@ -81,7 +81,7 @@ if __name__ == "__main__":
     img2 = cv2.imread(file_img)
     result = four_point_transform_cv2(img2, corner_points)
     plt.figure(figsize=(10, 10))
-    plt.imshow(result)
+    plt.imshow(cv2.cvtColor(result, cv2.COLOR_BGR2RGB))
     plt.show()
     # cv2.imwrite("./out.png", result)
     # TODO: Test my implementation
