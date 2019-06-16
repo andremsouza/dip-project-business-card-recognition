@@ -15,7 +15,7 @@ For this project, we will build a collection of images for testing purposes. Ini
 
 [x] - Corner detection - Detect/approximate corners of the business card of the input image. The user should be able to make adjustments when the detection is not accurate.
 
-[ ] - Perspective transform - Some images may be taken from different perspectives. This stage's objetive is to normalize the perspective, using on the corner points of the corner detection step, to enhance further operations.
+[x] - Perspective transform - Some images may be taken from different perspectives. This stage's objetive is to normalize the perspective, using on the corner points of the corner detection step, to enhance further operations.
 
 [ ] - Text and character recognition - Recognize the characters present in the text of the business card, and build strings with the sequences of recognized characters.
 
