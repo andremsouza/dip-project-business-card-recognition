@@ -2,7 +2,6 @@
 # ## Imports
 import numpy as np
 import cv2
-from corner_detection import CornerDetector
 # %%
 
 
@@ -12,6 +11,9 @@ class PerspectiveTransform:
     Note:
         It is assumed that the points in pts are in the following order:
         [top-left, top-right, bottom-left, bottom-right]
+        Also, the structure of each point should be as follows:
+            (x, y), where x represents the column and y represents the line
+                of the point in the image.
     Args:
         img (array-like): Source image for transformation.
             May be a grayscale or RGB image.
@@ -194,6 +196,7 @@ class PerspectiveTransform:
 # Running tests on an random image
 # ! This segment of the code is used only for testing purposes
 if __name__ == "__main__":
+    import corner_detection
     import imageio
     import matplotlib.pyplot as plt
     import os
@@ -211,7 +214,8 @@ if __name__ == "__main__":
     plt.show()
 
     # Finding corners from input image
-    corner_points = CornerDetector(img).find_corners4().astype(np.float32)
+    corner_points = corner_detection.CornerDetector(
+        img).find_corners4().astype(np.float32)
     corner_points[:, [0, 1]] = corner_points[:, [1, 0]]
 
     # Computing the perspective transform
