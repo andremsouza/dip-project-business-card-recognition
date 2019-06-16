@@ -2,14 +2,9 @@
 # ## Imports
 # %%
 import numpy as np
-import imageio
-import matplotlib.pyplot as plt
 import scipy
 import skimage
-import skimage.segmentation
-import skimage.draw
 import cv2
-import os
 
 
 # %%
@@ -228,6 +223,9 @@ class CornerDetector:
 # Running tests on an random image
 # ! This segment of the code is used only for testing purposes
 if __name__ == "__main__":
+    import imageio
+    import matplotlib.pyplot as plt
+    import os
     # Listing example files
     example_files = [
         './images/' + f for f in os.listdir('./images')
