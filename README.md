@@ -17,7 +17,7 @@ For this project, we will build a collection of images for testing purposes. Ini
 
 [x] - Perspective transform - Some images may be taken from different perspectives. This stage's objetive is to normalize the perspective, using on the corner points of the corner detection step, to enhance further operations.
 
-[ ] - Text and character recognition - Recognize the characters present in the text of the business card, and build strings with the sequences of recognized characters.
+[x] - Text and character recognition - Recognize the characters present in the text of the business card, and build strings with the sequences of recognized characters.
 
 [ ] - Text categorization for the portuguese language - For each sentence, use NLP methods to categorize it into the following categories: entity, phone number, email, location
 
