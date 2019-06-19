@@ -87,7 +87,6 @@ if __name__ == "__main__":
     plt.imshow(cv2.cvtColor(img_cv, cv2.COLOR_BGR2RGB))
     plt.show()
 
-    img_cv_rgb = cv2.cvtColor(img_cv, cv2.COLOR_BGR2RGB)
     for box in letter_bboxes:
         x, y, w, h = box
         print(find_text_pytesseract(img_p[y:y + h + 1, x:x + w + 1]))
