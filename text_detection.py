@@ -86,7 +86,6 @@ if __name__ == "__main__":
     plt.figure(figsize=(10, 10))
     plt.imshow(cv2.cvtColor(img_cv, cv2.COLOR_BGR2RGB))
     plt.show()
-    cv2.imwrite('./out.png', img_cv)
 
     img_cv_rgb = cv2.cvtColor(img_cv, cv2.COLOR_BGR2RGB)
     for box in letter_bboxes:
