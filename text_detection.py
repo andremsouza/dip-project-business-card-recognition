@@ -39,7 +39,7 @@ class TextDetector:
             After the closing operation, we utilize OpenCV's fincContours to
             detect lines of text, and filter then only for rectangular areas
             that have their widths larger than their heights.
-        
+
         Args:
             structuring_el_size (tuple): A tuple of two integers, representing
                 the width and height of the structuring element used to detect
