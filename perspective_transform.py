@@ -43,6 +43,9 @@ class PerspectiveTransform:
 
         Note:
             Pay close attention to the order of the x,y coordinates
+        Args:
+            pts (array-like): Four points of the source image, as specified
+                in the class documentation.
         Returns:
             numpy.ndarray: Projective mapping of the four points.
         """
