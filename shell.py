@@ -89,11 +89,6 @@ def processCard(selectedCard):
 #Main program of the shell which read continously the user commands and process them.
 def shell():
     selectedCard = 0
-    example_files = [
-                './images/' + f for f in os.listdir('./images')
-                if os.path.isfile(os.path.join('./images', f))
-            ]
-    randomFiles = []
     usageMessage = """
         Usage:
         The shell supports the next commands:
@@ -104,6 +99,12 @@ def shell():
             - help: show this message.
     """
     print(usageMessage)
+    example_files = [
+                './images/' + f for f in os.listdir('./images')
+                if os.path.isfile(os.path.join('./images', f))
+            ]
+    randomFiles = []
+
     while(True):
         cmd  = str(input().rstrip())
         if re.fullmatch(r"exit",cmd):
@@ -124,7 +125,7 @@ def shell():
                 index = randomFiles[selectedCard-1]
                 processCard(example_files[index])
         elif re.fullmatch(r"help", cmd):
-            print(usageMessage)
+            print(usa)
         else:
             print("Command not recognized. Please, try again.")
         
