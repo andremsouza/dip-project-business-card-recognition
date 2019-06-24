@@ -93,3 +93,30 @@ As the examples of inputs and outputs have shown, the final application must be 
 Until the date of this commit (29/05/2019), we have built the image collection for test purposes, and implemented methods for corner detection, utilizing the Harris Corner Detector and Shi-Tomasi Corner Detector.
 
 For the corner detection, we created functions for conversion from RGB to grayscale, computing image derivatives using the Sobel coefficient, and the corner detection function. We've utilized OpenCV's functions for denoising, and Scikit-image's functions for filtering and thresholding.
+
+## Final Report
+
+### Main Objective
+  
+  - Crop the businness card and repair its perspective 
+  - Extract possible informations present in the card
+  
+### Input Description
+  
+  The dataset we used did not change. We used some images from the web and many others from a collection we build by ourselves taking fotos with a cellphone camera.
+  
+ #### An example from our collection
+ 
+ ![collectionExample](https://github.com/andremsouza/dip-project-business-card-recognition/blob/dev/images/806022435_248014.jpg)
+ 
+ # Dependencies
+  
+ ## Packages
+  
+ ## Libraries
+ 
+ ## Demonstration
+ 
+ 
+ 
+ 
