@@ -8,8 +8,17 @@ import text_detection
 import cv2
 import re
 import random
-    
+
+
 def showSamples(files,randomFiles,size=9):
+    """Show to the user some samples business cards selected randomly.
+
+        Args:
+            files: A list of business card filenames.
+            randomFiles: A list of indexes of business cards selected randomly.
+            size: size of cards to be showed to the user. Fixed to 9 because of matplot lib limit.
+
+        """
     plt.figure(figsize=(30, 30))
     line = col = int(size/3)
     j = 1
@@ -23,6 +32,14 @@ def showSamples(files,randomFiles,size=9):
     plt.show()
 
 def selectRandomFiles(files):
+    """Select randomly 9 business cards 
+        to be showned to the user in order for him to choose which wants to process.
+
+        Args:
+            files: List of the business cards filenames.
+        Returns:
+            list: A list of the indexes of the bussiness cards selected randomly.
+        """
     randomFiles = []
     while len(randomFiles) < 9:
         index = np.random.randint(0,len(files))
@@ -30,9 +47,10 @@ def selectRandomFiles(files):
             randomFiles.append(index)
     return randomFiles
 
+#Process the card detecting corners, repairing perspective and with opencv detect text region and try to extract informations.
 def processCard(selectedCard):
-    img = imageio.imread(selectedCard)
 
+    img = imageio.imread(selectedCard)
     print("Detecting card corners....")
     img1_corners = corner_detection.CornerDetector(img).corner_detector()[0]
     plt.figure(figsize=(20, 20))
@@ -61,21 +79,31 @@ def processCard(selectedCard):
     plt.figure(figsize=(10, 10))
     plt.imshow(cv2.cvtColor(img1_t_cv, cv2.COLOR_BGR2RGB))
     plt.show()
-    
+
     for text in strs:
         if(len(text) != 0):
             print(text)
 
     print("Recognition completed.")
 
-def main():
+#Main program of the shell which read continously the user commands and process them.
+def shell():
     selectedCard = 0
     example_files = [
                 './images/' + f for f in os.listdir('./images')
                 if os.path.isfile(os.path.join('./images', f))
             ]
     randomFiles = []
-
+    usageMessage = """
+        Usage:
+        The shell supports the next commands:
+            - exit: finish the program and go out from the shell
+            - samples: show to the user 9 business cards selected randomly from the sample data set.
+            - selectcard <number>: select a businness card giving a number between 1 and 9.
+            - run: perform the process to analise and extract the business card informations.
+            - help: show this message.
+    """
+    print(usageMessage)
     while(True):
         cmd  = str(input().rstrip())
         if re.fullmatch(r"exit",cmd):
@@ -95,8 +123,13 @@ def main():
             else:
                 index = randomFiles[selectedCard-1]
                 processCard(example_files[index])
+        elif re.fullmatch(r"help", cmd):
+            print(usageMessage)
         else:
             print("Command not recognized. Please, try again.")
+        
+def main():
+    shell()
 
 if __name__ == "__main__":
     main()
