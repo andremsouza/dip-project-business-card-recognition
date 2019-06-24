@@ -150,7 +150,7 @@ if __name__ == "__main__":
     ]
     # Selecting random file for testing
     file_img = example_files[np.random.randint(0, len(example_files))]
-    file_img = './images/806123698_321554.jpg'  # Good file for testing
+    # file_img = './images/806123698_321554.jpg'  # Good file for testing
     img = imageio.imread(file_img)
     plt.figure(figsize=(10, 10))
     plt.imshow(img)
