@@ -96,7 +96,7 @@ For the corner detection, we created functions for conversion from RGB to graysc
 
 ## Final Report
 
- A demonstration of the project, its deailed explanation and results discussion can be seen in this [python notebook](https://github.com/andremsouza/dip-project-business-card-recognition/blob/dev/final_report.ipynb)
+ A demonstration of the project, its detailed explanation and results discussion can be seen in this [python notebook](https://github.com/andremsouza/dip-project-business-card-recognition/blob/dev/final_report.ipynb)
 
 
 ## Program Usage
