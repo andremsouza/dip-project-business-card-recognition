@@ -126,7 +126,7 @@ Enter these commands:
 
 Notice that you have to close the window which shows the image in order to continue using the shell in the terminal.
  
- # Demonstration and results discuss
+ # Demonstration and results discussion
  
  A demonstration of the project, its deailed explanation and results discussion can be seen in this [python notebook](https://github.com/andremsouza/dip-project-business-card-recognition/blob/dev/final_report.ipynb)
  
