@@ -97,17 +97,36 @@ For the corner detection, we created functions for conversion from RGB to graysc
 ## Final Report
 
  A demonstration of the project, its deailed explanation and results discussion can be seen in this [python notebook](https://github.com/andremsouza/dip-project-business-card-recognition/blob/dev/final_report.ipynb)
- 
-  ## Program Usage
-  
-  The entire project can be executed using the shell program "shell.py".
-  The shell supports the next commands:
+
+
+## Program Usage
+
+The entire project can be executed using the shell program "shell.py".
+
+### Requirements
+
+The following programs and Python packages need to be installed at the running system, for proper execution of the shell.py script:
+
+- Python packages:
+    - [numpy](https://pypi.org/project/numpy/)
+    - [imageio](https://pypi.org/project/imageio/)
+    - [matplotlib](https://pypi.org/project/matplotlib/)
+    - [scipy](https://pypi.org/project/scipy/)
+    - [scikit-image](https://pypi.org/project/scikit-image/)
+    - [opencv-python](https://pypi.org/project/opencv-python/)
+    - [Pillow](https://pypi.org/project/Pillow/)
+    - [pytesseract](https://pypi.org/project/pytesseract/)
+- External programs:
+    - [Tesseract](https://github.com/tesseract-ocr/tesseract/wiki)
+
+
+The shell supports the following commands:
   - `exit`: finish the program and go out from the shell
   - `samples`: show to the user 9 business cards selected randomly from the sample data set.
   - `selectcard <number>`: select a businness card giving a number between 1 and 9.
   - `run`: perform the process to analise and extract the business card informations.
   - `help`: show the usage help message.
-  
+
 Just run `python3 shell.py`.
 Enter these commands:
 - `samples`. This will show 9 images randomly selected from the sample dataset.
@@ -116,8 +135,4 @@ Enter these commands:
 - `exit`. This will exit the shell program.
 
 Notice that you have to close the window which shows the image in order to continue using the shell in the terminal.
- 
-
- 
- 
  
