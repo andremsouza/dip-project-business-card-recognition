@@ -96,20 +96,11 @@ For the corner detection, we created functions for conversion from RGB to graysc
 
 ## Final Report
 
-### Main Objective
-  
-  - Crop the businness card and repair its perspective 
-  - Extract possible informations present in the card
-  
-### Input Description
-  
-  The dataset we used did not change. We used some images from the web and many others from a collection we build by ourselves taking fotos with a cellphone camera.
-  
- #### An example from our collection
+ A demonstration of the project, its deailed explanation and results discussion can be seen in this [python notebook](https://github.com/andremsouza/dip-project-business-card-recognition/blob/dev/final_report.ipynb)
  
- ![collectionExample](https://github.com/andremsouza/dip-project-business-card-recognition/blob/dev/images/806022435_248014.jpg)
- 
-  # Usage
+  # Program Usage
+  
+  The entire project can be executed using the shell program "shell.py".
   The shell supports the next commands:
   - `exit`: finish the program and go out from the shell
   - `samples`: show to the user 9 business cards selected randomly from the sample data set.
@@ -126,9 +117,7 @@ Enter these commands:
 
 Notice that you have to close the window which shows the image in order to continue using the shell in the terminal.
  
- # Demonstration and results discussion
- 
- A demonstration of the project, its deailed explanation and results discussion can be seen in this [python notebook](https://github.com/andremsouza/dip-project-business-card-recognition/blob/dev/final_report.ipynb)
+
  
  
  
