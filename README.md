@@ -109,14 +109,26 @@ For the corner detection, we created functions for conversion from RGB to graysc
  
  ![collectionExample](https://github.com/andremsouza/dip-project-business-card-recognition/blob/dev/images/806022435_248014.jpg)
  
- # Dependencies
+  # Usage
+  The shell supports the next commands:
+  - `exit`: finish the program and go out from the shell
+  - `samples`: show to the user 9 business cards selected randomly from the sample data set.
+  - `selectcard <number>`: select a businness card giving a number between 1 and 9.
+  - `run`: perform the process to analise and extract the business card informations.
+  - `help`: show the usage help message.
   
- ## Packages
-  
- ## Libraries
+Just run `python3 shell.py`.
+Enter these commands:
+- `samples`. This will show 9 images randomly selected from the sample dataset.
+- `selectcard 4`. This will select the fourth card.
+- `run`. This will run all the project steps.
+- `exit`. This will exit the shell program.
+
+Notice that you have to close the window which shows the image in order to continue using the shell in the terminal.
  
- ## Demonstration
+ # Demonstration and results discuss
  
+ A demonstration of the project, its deailed explanation and results discussion can be seen in this [python notebook](https://github.com/andremsouza/dip-project-business-card-recognition/blob/dev/final_report.ipynb)
  
  
  
