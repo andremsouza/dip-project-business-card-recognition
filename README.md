@@ -98,7 +98,7 @@ For the corner detection, we created functions for conversion from RGB to graysc
 
  A demonstration of the project, its deailed explanation and results discussion can be seen in this [python notebook](https://github.com/andremsouza/dip-project-business-card-recognition/blob/dev/final_report.ipynb)
  
-  # Program Usage
+  ## Program Usage
   
   The entire project can be executed using the shell program "shell.py".
   The shell supports the next commands:
